@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Workbench&display=swap");
+:root {
+    --orange: #e7840b;
+    --green: #0be712;
+    --blue: #0bd1e7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #444, #222);
+    color: #ddd;
+    font-family: "Workbench", sans-serif;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 330px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: relative;
+}
+
+.hours-box,
+.minutes-box,
+.seconds-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    justify-self: flex-start;
+    align-self: center;
+    translate: -1rem;
+}
+
+.hours-box {
+    box-shadow: 0px 0px 15px var(--orange);
+    background: radial-gradient(circle at 60% 60%, #111, var(--orange));
+}
+
+.minutes-box {
+    box-shadow: 0px 0px 15px var(--green);
+    background: radial-gradient(circle at 60% 60%, #111, var(--green));
+}
+
+.seconds-box {
+    box-shadow: 0px 0px 15px var(--blue);
+    background: radial-gradient(circle at 60% 60%, #111, var(--blue));
+}
+
+.hours,
+.minutes,
+.seconds {
+    display: flex;
+    position: absolute;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.hours {
+    height: 200px;
+    box-shadow: inset 5px 0px 5px var(--orange);
+}
+
+.minutes {
+    height: 300px;
+    box-shadow: inset 5px 0px 5px var(--green);
+}
+
+.seconds {
+    height: 400px;
+    box-shadow: inset 5px 0px 5px var(--blue);
+}
+
+.date {
+    color: rgb(231, 74, 17);
+}
