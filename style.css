@@ -1,89 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=Workbench&display=swap");
 :root {
-    --orange: #e7840b;
-    --green: #0be712;
-    --blue: #0bd1e7;
+  --purple: rgb(180, 0, 255);
+  --yellow: rgb(255, 240, 120);
+  --green: rgb(80, 255, 0);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    display: grid;
-    place-content: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #444, #222);
-    color: #ddd;
-    font-family: "Workbench", sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #444, #111);
+  color: #ddd;
+  font-family: "Workbench", sans-serif;
 }
 
 .clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 330px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50%;
+}
+
+.hours-box,
+.minutes-box,
+.seconds-box,
+.hours,
+.minutes,
+.seconds {
+  display: flex;
+  position: absolute;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
 }
 
 .hours-box,
 .minutes-box,
 .seconds-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 40px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    justify-self: flex-start;
-    align-self: center;
-    translate: -1rem;
-}
-
-.hours-box {
-    box-shadow: 0px 0px 15px var(--orange);
-    background: radial-gradient(circle at 60% 60%, #111, var(--orange));
-}
-
-.minutes-box {
-    box-shadow: 0px 0px 15px var(--green);
-    background: radial-gradient(circle at 60% 60%, #111, var(--green));
-}
-
-.seconds-box {
-    box-shadow: 0px 0px 15px var(--blue);
-    background: radial-gradient(circle at 60% 60%, #111, var(--blue));
-}
-
-.hours,
-.minutes,
-.seconds {
-    display: flex;
-    position: absolute;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  justify-self: flex-start;
+  align-self: center;
+  translate: -1rem;
 }
 
 .hours {
-    height: 200px;
-    box-shadow: inset 5px 0px 5px var(--orange);
+  height: 200px;
 }
 
 .minutes {
-    height: 300px;
-    box-shadow: inset 5px 0px 5px var(--green);
+  height: 300px;
 }
 
 .seconds {
-    height: 400px;
-    box-shadow: inset 5px 0px 5px var(--blue);
+  height: 400px;
 }
 
-.date {
-    color: rgb(231, 74, 17);
+/* mobile */
+
+@media (max-width: 768px) {
+  .clock {
+    height: 200px;
+  }
+  .hours-box,
+  .minutes-box,
+  .seconds-box {
+    width: 30px;
+  }
+  .hours {
+    height: 150px;
+  }
+  .minutes {
+    height: 200px;
+  }
+  .seconds {
+    height: 250px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: 769px) {
+  .clock {
+    height: 400px;
+  }
+  .hours-box,
+  .minutes-box,
+  .seconds-box {
+    width: 50px;
+  }
+  .hours {
+    height: 250px;
+  }
+  .minutes {
+    height: 350px;
+  }
+  .seconds {
+    height: 450px;
+  }
 }
